@@ -112,6 +112,22 @@
             cursor: pointer;
         }
 
+        .expand-arrow {
+            display: none;
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent);
+            transition: stroke 0.3s ease;
+        }
+
+        .sidebar.collapsed .sidebar-logo-link:hover .sidebar-logo {
+            display: none;
+        }
+
+        .sidebar.collapsed .sidebar-logo-link:hover .expand-arrow {
+            display: block;
+        }
+
         .sidebar-logo {
             width: 30px;
             height: 30px;
@@ -974,7 +990,7 @@
         <div class="welcome-message">
             <img src="ufe-mon.webp" alt="UFE Logo" class="logo-large light-logo">
             <img src="ufe-white.png" alt="UFE Logo" class="logo-large dark-logo">
-            <h2>Тавтай морил!</h2>
+            <h2>UFE Чатботд тавтай морил!</h2>
             <p>Би танд туслахад бэлэн байна. Юу ч асуугаарай эсвэл доорх хурдан үйлдлүүдээс сонгоно уу.</p>
             <div class="quick-actions">
                 <button class="quick-action" onclick="sendQuickMessage('Сайн уу!')">Мэндчилье</button>
@@ -1008,6 +1024,10 @@
             <a href="index.html" class="sidebar-logo-link" id="sidebarLogoLink">
                 <img src="ufe-mon.webp" alt="UFE Logo" class="sidebar-logo light-logo">
                 <img src="ufe-white.png" alt="UFE Logo" class="sidebar-logo dark-logo">
+                <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="13 17 18 12 13 7"></polyline>
+                    <polyline points="6 17 11 12 6 7"></polyline>
+                </svg>
             </a>
             <button class="collapse-btn" id="collapseBtn" onclick="collapseSidebar()" aria-label="Collapse sidebar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
